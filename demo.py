@@ -39,6 +39,9 @@ def getSentimentScore(ticker, startDate, endDate):
     weighted_score = (sentiment_counts.get(0, 0) * 0 +  # Negative sentiment weight
                       sentiment_counts.get(1, 0) * 0.5 +  # Neutral sentiment weight
                       sentiment_counts.get(2, 0) * 1)  # Positive sentiment weight
+    
+    print(f"Sentiment Score for {ticker} from {startDate} to {endDate}: {weighted_score:.2f}")
+
 
     return weighted_score
 
@@ -46,12 +49,10 @@ def getSentimentScore(ticker, startDate, endDate):
 ticker = "AAPL"
 startDate = "2024-03-16"
 endDate = "2024-04-12"
-score = getSentimentScore(ticker, startDate, endDate)
-print(f"Sentiment Score for {ticker} from {startDate} to {endDate}: {score:.2f}")
+getSentimentScore(ticker, startDate, endDate)
 
 
 ticker2 ="MSFT"
-score = getSentimentScore(ticker2, startDate, endDate)
-print(f"Sentiment Score for {ticker2} from {startDate} to {endDate}: {score:.2f}")
+getSentimentScore(ticker2, startDate, endDate)
 
 
